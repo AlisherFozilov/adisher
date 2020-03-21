@@ -1,3 +1,3 @@
-module github.com/AlisherFozilov/didi
+module github.com/AlisherFozilov/adisher
 
 go 1.13
