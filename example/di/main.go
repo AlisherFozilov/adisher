@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github.com/AlisherFozilov/didi/pkg/di"
+	"github.com/AlisherFozilov/adisher/pkg/di"
 	"log"
 )
 

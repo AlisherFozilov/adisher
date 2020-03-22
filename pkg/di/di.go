@@ -30,7 +30,6 @@ func (c *container) Provide(constructors ...interface{}) {
 	c.wire()
 	log.Print(len(c.registered))
 	log.Print(len(c.wired))
-
 }
 
 func (c *container) Component(ptrToComponentPtr interface{}) {
@@ -134,4 +133,24 @@ func (c *container) searchTypeInValuesReflection(argType reflect.Type) (reflect.
 		}
 	}
 	return reflect.Value{}, false
+}
+
+func (c *container) Start() {
+	for _, component := range c.wired {
+		if starter, ok := component.value.Interface().(interface{
+			Start()
+		}); ok {
+			starter.Start()
+		}
+	}
+}
+
+func (c *container) Stop() {
+	for _, component := range c.wired {
+		if stopper, ok := component.value.Interface().(interface{
+			Stop()
+		}); ok {
+			stopper.Stop()
+		}
+	}
 }
